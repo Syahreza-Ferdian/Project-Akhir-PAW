@@ -23,7 +23,7 @@ class MenuSeeder extends Seeder
                 'id_kategori'   => 1,
                 'tags'          => 'Seafood, Crispy, Appetizer, Fusion',
                 'long_desc'     => 'Crispy Shrimp Delight adalah hidangan pembuka yang memukau dengan kombinasi udang segar yang dicelupkan dalam adonan tepung renyah. Disajikan dengan saus mayo special yang memberikan sentuhan unik, hidangan ini menyajikan perpaduan cita rasa yang menggugah selera. Cocok untuk pencinta makanan laut yang menginginkan pengalaman kuliner yang istimewa.',
-                'picture'       => 'menu1.jpg',
+                'picture'       => 'appetizer/menu1.jpg',
                 'harga'         => 65000
             ],
             [
@@ -32,7 +32,7 @@ class MenuSeeder extends Seeder
                 'id_kategori'   => 1,
                 'tags'          => 'Salad, Caprese, Skewers, Vegetarian',
                 'long_desc'     => 'Caprese Salad Skewers menghadirkan kelezatan salad Caprese dalam bentuk yang lebih menyenangkan. Tomat cherry yang manis, potongan mozzarella yang lembut, dan daun basil segar disusun dalam tusukan cantik, kemudian disiram dengan balsamic glaze yang kaya rasa. Hidangan ini memberikan kesegaran dan kenikmatan untuk memulai hidangan utama Anda.',
-                'picture'       => 'menu1.jpg',
+                'picture'       => 'appetizer/menu2.jpg',
                 'harga'         => 50000
             ],
             [
@@ -41,7 +41,7 @@ class MenuSeeder extends Seeder
                 'id_kategori'   => 1,
                 'tags'          => 'Dimsum, Asian, Sampler, Spicy',
                 'long_desc'     => 'Nikmati keanekaragaman cita rasa Asia dengan Asian Dumpling Sampler. Dimsum lembut yang beraneka rasa, disajikan dengan saus pedas dan kecap khas Asia, menciptakan pengalaman makan yang memuaskan. Cocok untuk mereka yang menyukai rasa autentik Asia dalam satu hidangan pembuka yang lezat.',
-                'picture'       => 'menu1.jpg',
+                'picture'       => 'appetizer/menu3.jpg',
                 'harga'         => 55000
             ],
             [
@@ -50,7 +50,7 @@ class MenuSeeder extends Seeder
                 'id_kategori'   => 1,
                 'tags'          => 'Mushroom, Cream Cheese, Stuffed, Baked',
                 'long_desc'     => 'Stuffed Mushrooms with Herb Cream Cheese adalah hidangan pembuka yang menggoda selera dengan kombinasi jamur yang diisi dengan keju krim herbal lembut. Dipanggang hingga kecoklatan, hidangan ini memberikan kelezatan yang memanjakan lidah. Cocok sebagai pilihan pembuka untuk pecinta keju dan jamur.',
-                'picture'       => 'menu1.jpg',
+                'picture'       => 'appetizer/menu4.jpg',
                 'harga'         => 60000
             ],
         ];

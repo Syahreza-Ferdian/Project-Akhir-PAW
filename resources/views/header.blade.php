@@ -23,7 +23,7 @@
                         <a class="nav-link" href="#"><span class="text-light fs-5">Home</span></a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#"><span class="text-light fs-5">Menu</span></a>
+                        <a class="nav-link" href="#menu"><span class="text-light fs-5">Menu</span></a>
                     </li>
                     <li class="nav-item me-5">
                         <a class="nav-link" href="#"><span class="text-light fs-5">Order</span></a>

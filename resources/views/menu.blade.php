@@ -5,17 +5,19 @@
 @endsection
 
 @section('menu-content')
+    {{-- APPETIZER MENU --}}
     <div class="container d-flex" style="margin: 10rem auto">
         {{-- GAMBAR MENU APPETIZER - CAROUSEL AUTOPLAY --}}
-        <div class="side-picture w-50">
+        <div class="side-picture w-50" data-aos="fade-right">
             <div class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($data['appetizer'] as $key => $menu)
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }} ">
-                            <img src=" {{ asset('images/menu_picts/' . $menu->picture) }} " class="d-block mx-auto w-100" alt="">
-                            <div class="carousel-caption d-none d-md-block pb-0" style="color: white;">
-                                <h5><strong>{{ $menu->nama }}</strong></h5>
-                                <p>{{ $menu->short_desc }}</p>
+                            <img src=" {{ asset('images/menu_picts/' . $menu->picture) }} " class="d-block mx-auto w-100" alt="" style="object-fit: cover; object-position: inherit; height: 500px; width: auto">
+                            <div class="carousel-caption d-none d-md-block pb-0" style="color: black">
+                                <h5 class="highlight"><strong>{{ $menu->nama }}</strong></h5>
+                                <p class="highlight">{{ $menu->short_desc }}</p>
+                                
                             </div>
                         </div>
                     @endforeach
@@ -23,19 +25,23 @@
             </div>
         </div>
 
-        <div class="container ps-5">
+        <div class="container ps-5" data-aos="fade-left">
             <h3 class="mb-4"><strong>Appetizer</strong></h3>
             @foreach ($data['appetizer'] as $menu)
-                <div class="row mb-5">
+                <div class="row mb-4">
                     <a href="" class="btn menu-item">
                         <div class="row">
                             <div class="col col-md-auto">
                                 <img src=" {{ asset('images/menu_picts/' . $menu->picture) }} " alt="" style="border-radius: 50%; height: 70px; width: 70px; object-fit: cover; object-position: center;">
                             </div>
         
-                            <div class="col">
-                                <h5 class="text-start">{{ $menu->nama }}</h5>
-                                
+                            <div class="col pt-1">
+                                <h5 class="text-start"><strong>{{ $menu->nama }}</strong></h5>
+                                <p class="text-start w-75">{{ $menu->short_desc }}</p>
+                            </div>
+
+                            <div class="col col-md-auto my-auto">
+                                <p><strong class="fw-bolder">IDR {{ number_format($menu->harga / 1000) }}K</strong></p>
                             </div>
                         </div>
                     </a>
@@ -44,7 +50,52 @@
         </div>
     </div>
 
-    {{-- @foreach ($data['appetizer'] as $item)
-        <p>{{ $item->nama }}</p>
-    @endforeach --}}
+    <div class="divider">
+        <img src="{{ asset('images/menu_picts/divider1.jpg') }}" alt="" style="height: 350px; width: 100%; object-fit: cover; object-position: 0px 75%">
+    </div>
+
+    {{-- MAIN COURSE MENU --}}
+    <div class="container d-flex" style="margin: 10rem auto">
+        <div class="container pe-5" data-aos="fade-left">
+            <h3 class="mb-4"><strong>Appetizer</strong></h3>
+            @foreach ($data['appetizer'] as $menu)
+                <div class="row mb-4">
+                    <a href="" class="btn menu-item">
+                        <div class="row">
+                            <div class="col col-md-auto">
+                                <img src=" {{ asset('images/menu_picts/' . $menu->picture) }} " alt="" style="border-radius: 50%; height: 70px; width: 70px; object-fit: cover; object-position: center;">
+                            </div>
+        
+                            <div class="col pt-1">
+                                <h5 class="text-start"><strong>{{ $menu->nama }}</strong></h5>
+                                <p class="text-start w-75">{{ $menu->short_desc }}</p>
+                            </div>
+
+                            <div class="col col-md-auto my-auto">
+                                <p><strong class="fw-bolder">IDR {{ number_format($menu->harga / 1000) }}K</strong></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+
+        {{-- GAMBAR MENU - CAROUSEL AUTOPLAY --}}
+        <div class="side-picture w-50" data-aos="fade-right">
+            <div class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach ($data['appetizer'] as $key => $menu)
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }} ">
+                            <img src=" {{ asset('images/menu_picts/' . $menu->picture) }} " class="d-block mx-auto w-100" alt="" style="object-fit: cover; object-position: inherit; height: 500px; width: auto">
+                            <div class="carousel-caption d-none d-md-block pb-0" style="color: black">
+                                <h5 class="highlight"><strong>{{ $menu->nama }}</strong></h5>
+                                <p class="highlight">{{ $menu->short_desc }}</p>
+                                
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
