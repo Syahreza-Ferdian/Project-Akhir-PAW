@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('menu_review', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('posted_at');
+            $table->string('poster_name');
+            $table->text('message');
+            $table->unsignedBigInteger('menu_id');
+            $table->enum('rating', [1, 2, 3, 4, 5]);
+
+            $table->foreign('menu_id')->references('id')->on('menu');
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('menu_review');
     }
 };

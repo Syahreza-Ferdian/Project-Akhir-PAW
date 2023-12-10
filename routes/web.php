@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function() {
-    return view('home');
-});
+Route::get('/home', [MenuController::class, 'index']);
+// Route::get('/home/menu', [MenuController::class, 'index']);
