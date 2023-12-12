@@ -13,15 +13,23 @@ class MenuModel extends Model
 
     protected $fillable = [
         'nama',
-        'short-desc',
-        'id_category',
+        'short_desc',
+        'id_kategori',
         'tags',
-        'long-desc',
+        'long_desc',
         'picture',
         'harga'
     ];
 
     static function getSpecificCategory($category_id) {
         return self::where('id_kategori', $category_id)->get();
+    }
+
+    public function category() {
+        return $this->belongsTo(CategoryModel::class, 'id_kategori', 'id');
+    }
+
+    static function getSpecificMenuDetail($id) {
+        return self::with('category')->where('id', $id)->first();
     }
 }
