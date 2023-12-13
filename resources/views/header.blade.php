@@ -1,4 +1,7 @@
 <style>
+    .header, .navbar {
+        font-family: 'Cormorant Infant', serif;
+    }
     .header {
         background-color: #292E36;
     }
