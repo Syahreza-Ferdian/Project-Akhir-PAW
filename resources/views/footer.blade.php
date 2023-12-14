@@ -46,7 +46,7 @@
                 
                 <div class="container d-flex justify-content-between align-items-center pt-0 ps-0 pe-0">
                     <p class="mt-0 mb-0">Copyright - Kelompok 5</p>
-                    <p class="mt-0 mb-0 me-3">Pengembangan Aplikasi Web TI-E</p>
+                    <p class="mt-0 mb-0 me-3">Pengembangan Aplikasi Web TI-C</p>
                 </div>
             </div>
         </div>

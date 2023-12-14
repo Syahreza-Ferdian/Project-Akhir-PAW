@@ -11,7 +11,7 @@
     <div class="container d-flex pt-5 justify-content-between">
         <button class="btn mt-4 px-4" style="border: 2px solid; border-color: #E1B168; border-radius: 0%; height: 60px"><span class="fs-3 text-light">Hubungi 9819281</span></button>
         
-        <img src="{{ asset('images/Logo Makan Mania.png') }}" alt="logo" style="width:17rem">
+        <img src="{{ asset('images/Logo Makan Mania.png') }}" alt="logo" style="width:17rem;" class="me-5">
 
         <button class="btn mt-4 px-4" style="background-color: #E1B168; border-radius: 0%; height: 60px"><span class="fs-3">Reservation</span></button>
     </div>
@@ -35,7 +35,7 @@
                         <a class="nav-link" href="#"><span class="text-light fs-5">Reservation</span></a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#"><span class="text-light fs-5">Feedback</span></a>
+                        <a class="nav-link" href="{{ route('feedback') }}"><span class="text-light fs-5">Feedback</span></a>
                     </li>
                 </ul>
             </div>

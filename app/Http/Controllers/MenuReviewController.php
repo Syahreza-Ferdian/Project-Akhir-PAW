@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MenuReviewModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MenuReviewController extends Controller
@@ -16,6 +17,9 @@ class MenuReviewController extends Controller
             'message'       => $request->review,
             'rating'        => $request->rating_input
         ]);
+
+        $formattedDate = Carbon::parse($review->posted_at)->format('d-m-Y h:i:s');
+        $review->posted_at = $formattedDate;
 
         return response()->json(['review' => $review]);
     }

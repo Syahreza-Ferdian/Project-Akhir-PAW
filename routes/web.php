@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuReviewController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +31,12 @@ Route::get('/home/menu/{id}', [
 
 Route::post('/add-review', [
     MenuReviewController::class, 'reviewBaru'
+]);
+
+Route::get('/home/feedback', [
+    QuestionController::class, 'index'
+])->name('feedback');
+
+Route::post('/new-feedback', [
+    FeedbackController::class, 'newFeedback'
 ]);
