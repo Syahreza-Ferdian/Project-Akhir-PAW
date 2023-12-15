@@ -46,7 +46,7 @@
                     </a>
                 </div>
             @endforeach
-            <a href="{{ route('category_each', ['category' => 'appetizer']) }}" class="btn btn-primary">See All Dishes</a>
+            <a href="{{ route('category_each', ['category' => 'appetizer']) }}"><button class="btn px-4 mt-2" style="border: 2px solid; border-color: #E1B168; border-radius: 0%; height: 45px; color: #E1B168; font-family: 'Josefin Sans', sans-serif;">See All Dishes</button></a>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
                     </a>
                 </div>
             @endforeach
-            <a href="{{ route('category_each', ['category' => 'main_course']) }}" class="btn btn-primary">See All Dishes</a>
+            <a href="{{ route('category_each', ['category' => 'main_course']) }}"><button class="btn px-4 mt-2" style="border: 2px solid; border-color: #E1B168; border-radius: 0%; height: 45px; color: #E1B168; font-family: 'Josefin Sans', sans-serif;">See All Dishes</button></a>
         </div>
 
         {{-- GAMBAR MENU - CAROUSEL AUTOPLAY --}}
@@ -144,7 +144,7 @@
                     </a>
                 </div>
             @endforeach
-            <a href="{{ route('category_each', ['category' => 'dessert']) }}" class="btn btn-primary">See All Dishes</a>
+            <a href="{{ route('category_each', ['category' => 'dessert']) }}"><button class="btn px-4 mt-2" style="border: 2px solid; border-color: #E1B168; border-radius: 0%; height: 45px; color: #E1B168; font-family: 'Josefin Sans', sans-serif;">See All Dishes</button></a>
         </div>
     </div>
 

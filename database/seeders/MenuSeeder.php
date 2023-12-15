@@ -110,6 +110,33 @@ class MenuSeeder extends Seeder
                 'picture'       => 'main_course/menu3.jpeg',
                 'harga'         => 65000
             ],
+            [
+                'nama'          => 'Chicken Parmesan',
+                'short_desc'    => 'Dada ayam goreng dengan saus marinara dan keju mozzarella, disajikan dengan spaghetti.',
+                'id_kategori'   => 2,
+                'tags'          => 'Italian, Chicken, Parmesan, Pasta',
+                'long_desc'     => 'Chicken Parmesan adalah hidangan klasik yang memukau selera. Dada ayam yang digoreng dengan sempurna disajikan dengan saus marinara yang kaya dan dilapisi dengan keju mozzarella leleh. Disajikan di atas spaghetti yang dimasak al dente, hidangan ini adalah kombinasi yang sempurna dari cita rasa yang gurih dan lezat.',
+                'picture'       => 'main_course/menu4.jpg',
+                'harga'         => 85000
+            ],
+            [
+                'nama'          => 'Mediterranean Stuffed Chicken',
+                'short_desc'    => 'Dada ayam diisi dengan campuran mediterania, dipanggang hingga keemasan.',
+                'id_kategori'   => 2,
+                'tags'          => 'Ayam, Mediterania, Panggang, Gurih',
+                'long_desc'     => 'Hidangan utama ini, Mediterranean Stuffed Chicken, menghadirkan dada ayam yang diisi dengan campuran Mediterania yang kaya akan rasa. Dipanggang hingga keemasan, setiap gigitan memperkenalkan Anda pada kombinasi unik rasa rempah-rempah dan kelembutan daging ayam yang sempurna.',
+                'picture'       => 'main_course/menu5.jpg',
+                'harga'         => 220000
+            ],
+            [
+                'nama'          => 'Beef Wellington',
+                'short_desc'    => 'Daging sapi filet mignon yang dibungkus dengan adonan puff pastry, disajikan dengan saus jamur krim.',
+                'id_kategori'   => 2,
+                'tags'          => 'Beef, Puff Pastry, Elegant, Mushroom',
+                'long_desc'     => 'Rasakan kelezatan filet mignon dalam Beef Wellington kami. Daging sapi berkualitas tinggi yang dibungkus dengan hati-hati oleh lapisan adonan puff pastry yang renyah, kemudian dipanggang hingga mencapai kesempurnaan. Disajikan dengan saus jamur krim yang lezat, setiap gigitan adalah pengalaman kuliner yang tak terlupakan, menggabungkan cita rasa yang kaya dan tekstur yang memikat.',
+                'picture'       => 'main_course/menu6.jpg',
+                'harga'         => 200000
+            ],
         ];
 
         $dessert_menus = [
@@ -148,6 +175,42 @@ class MenuSeeder extends Seeder
                 'long_desc'     => 'Mango Coconut Panna Cotta adalah hidangan penutup yang menyegarkan dengan kombinasi panna cotta lembut, lapisan mangga segar yang manis, dan kelapa parut yang memberikan sentuhan tropis. Hidangan ini adalah penutup yang ringan dan lezat untuk menutup makan malam Anda.',
                 'picture'       => 'dessert/menu4.jpg',
                 'harga'         => 50000
+            ],
+            [
+                'nama'          => 'Dark Chocolate Mousse Tower',
+                'short_desc'    => 'Menara mousse cokelat hitam dengan lapisan krim dan hiasan buah segar.',
+                'id_kategori'   => 3,
+                'tags'          => 'Cokelat Hitam, Mousse, Krim, Buah Segar',
+                'long_desc'     => 'Temukan kelezatan tak tertandingi dalam Dark Chocolate Mousse Tower kami. Ini adalah sebuah karya seni kuliner yang memukau, menghadirkan menara mousse cokelat hitam yang lembut dan menggoda. Setiap lapisannya, dari kelembutan mousse hingga lapisan krim yang lembut, menciptakan harmoni yang sempurna dari rasa dan tekstur. Hiasan buah segar di atasnya menambahkan sentuhan segar yang memukau, menciptakan pengalaman penutup yang tak terlupakan. Ini bukan hanya sekadar hidangan penutup; ini adalah sebuah perayaan keindahan dan kenikmatan kuliner yang memanjakan semua indera Anda.',
+                'picture'       => 'dessert/menu5.jpg',
+                'harga'         => 65000
+            ],
+            [
+                'nama'          => 'Matcha Green Tea Tiramisu',
+                'short_desc'    => 'Tiramisu dengan lapisan keju mascarpone yang dipadukan dengan matcha green tea.',
+                'id_kategori'   => 3,
+                'tags'          => 'Tiramisu, Matcha, Mascarpone, Dessert',
+                'long_desc'     => 'Jelajahi harmoni yang unik dengan Matcha Green Tea Tiramisu kami. Lapisan lembut keju mascarpone, yang menyatu dengan kekhasan matcha green tea, menciptakan kombinasi yang mengejutkan dan memikat. Setiap gigitan membawa Anda dalam perjalanan rasa yang mendalam, di mana kelembutan dan aroma teh hijau bertemu dengan cinta dan kelezatan. Ini adalah pengalaman penutup yang memuaskan, dirancang untuk mengangkat semangat dan meninggalkan kesan tak terlupakan pada selera Anda.',
+                'picture'       => 'dessert/menu6.webp',
+                'harga'         => 75000
+            ],
+            [
+                'nama'          => 'Coconut Mango Pudding',
+                'short_desc'    => 'Puding kelapa dengan lapisan mangga segar dan serutan kelapa panggang.',
+                'id_kategori'   => 3,
+                'tags'          => 'Kelapa, Mangga, Puding, Segar',
+                'long_desc'     => 'Sambutlah sentuhan tropis dalam Coconut Mango Pudding kami. Puding kelapa yang lembut, seperti pelukan lembut dari pulau surga, bertemu dengan lapisan mangga segar yang menyegarkan. Disertai dengan serutan kelapa panggang yang memberikan sentuhan renyah dan aroma khas, setiap sendokan menghadirkan pengalaman nikmat yang tak terlupakan. Ini adalah kombinasi yang sempurna antara kenikmatan dan ketenangan, mengundang Anda untuk merayakan keindahan rasa alami.',
+                'picture'       => 'dessert/menu7.jpg',
+                'harga'         => 55000
+            ],
+            [
+                'nama'          => 'Pistachio Rosewater Baklava',
+                'short_desc'    => 'Lapisan phyllo dengan campuran pistachio, madu, dan essence rosewater.',
+                'id_kategori'   => 3,
+                'tags'          => 'Pistachio, Baklava, Madu, Rosewater',
+                'long_desc'     => 'Hadirkan kekayaan dan keindahan rasa dalam setiap gigitan Pistachio Rosewater Baklava kami. Lapisan phyllo yang tipis dan renyah menjadi wadah untuk campuran pistachio yang kaya, madu yang lembut, dan essence rosewater yang menghadirkan keharuman bunga yang memukau. Dengan setiap gigitan, Anda diundang untuk merasakan kelezatan dari timur tengah yang otentik. Ini bukan hanya hidangan penutup, melainkan perjalanan sensorik yang membawa Anda ke daerah yang jauh dan eksotis.',
+                'picture'       => 'dessert/menu8.jpg',
+                'harga'         => 80000
             ],
         ];
         DB::table('menu')->insert($appetizer_menus);
