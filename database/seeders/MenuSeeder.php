@@ -53,6 +53,33 @@ class MenuSeeder extends Seeder
                 'picture'       => 'appetizer/menu4.jpg',
                 'harga'         => 60000
             ],
+            [
+                'nama'          => 'Crispy Calamari',
+                'short_desc'    => 'Cumi-cumi segar yang dilapisi tepung renyah, disajikan dengan saus tartar dan irisan lemon.',
+                'id_kategori'   => 1,
+                'tags'          => 'Seafood, Crispy, Deep-fried, Appetizer',
+                'long_desc'     => 'Crispy Calamari adalah hidangan pembuka yang memikat selera dengan tekstur renyah luar biasa. Cumi-cumi segar dicelupkan dalam tepung spesial sebelum digoreng hingga keemasan. Disajikan dengan saus tartar yang lezat dan irisan lemon segar untuk menambah kesegaran. Hidangan ini adalah pilihan sempurna bagi pecinta hidangan laut yang menginginkan kelezatan yang tidak terlupakan.',
+                'picture'       => 'appetizer/menu5.jpg',
+                'harga'         => 65000
+            ],
+            [
+                'nama'          => 'Avocado Bruschetta',
+                'short_desc'    => 'Roti bruschetta yang dipanggang dengan lapisan avocado creamy, tomat cherry, dan taburan keju parmesan.',
+                'id_kategori'   => 1,
+                'tags'          => 'Bruschetta, Avocado, Fresh, Vegetarian',
+                'long_desc'     => 'Avocado Bruschetta adalah pilihan pembuka yang menyegarkan dan inovatif. Potongan roti bruschetta yang dipanggang hingga keemasan diselimuti dengan lapisan avocado creamy yang lembut. Ditambah dengan tomat cherry yang segar dan taburan keju parmesan yang gurih, menciptakan harmoni rasa yang tak tertandingi. Hidangan ini cocok untuk pencinta avocado dan cita rasa yang ringan.',
+                'picture'       => 'appetizer/menu6.jpg',
+                'harga'         => 55000
+            ],
+            [
+                'nama'          => 'Spinach and Artichoke Dip',
+                'short_desc'    => 'Campuran bayam dan artichoke yang dipanggang dengan keju cremay, disajikan dengan keripik tortilla.',
+                'id_kategori'   => 1,
+                'tags'          => 'Dip, Spinach, Artichoke, Creamy',
+                'long_desc'     => 'Spinach and Artichoke Dip adalah hidangan pembuka yang menggoda selera dengan kelembutan dan kelezatan. Campuran bayam yang segar dan artichoke yang lembut dipanggang dengan keju creamy hingga mencapai konsistensi yang sempurna. Disajikan dengan keripik tortilla yang renyah, hidangan ini memberikan pengalaman menyeluruh yang memuaskan bagi para pecinta rasa creamy dan tekstur yang beragam.',
+                'picture'       => 'appetizer/menu7.webp',
+                'harga'         => 60000
+            ],
         ];
 
         $main_course_menus = [

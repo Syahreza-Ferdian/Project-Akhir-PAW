@@ -37,18 +37,47 @@ class MenuController extends Controller
     }
 
     function categoryDetails($category) {
+        $id = MenuModel::getIdMenuByCategoryName($category);
+        $isAvail = MenuModel::find($id);
+
+        if(!$isAvail) {
+            exit();
+        }
+
+        $menus = MenuModel::getAllMenuInCategory($category);
+        foreach($menus as $menu) {
+            $rating[$menu->id] = MenuReviewModel::getAverageRating($menu->id);
+        }
+
         $data = [
-            'page_title' => ucwords($category),
-            'menu'       => MenuModel::getAllMenuInCategory($category)
+            'page_title'    => ucwords($category) . ' Category',
+            'category'      => $category,
+            'menu'          => MenuModel::getAllMenuInCategory($category),
+            'rating'        => $rating
         ];
 
         return view('show_all_menu_in_category')->with('data', $data);
     }
 
-    function cariMenu($param) {
+    function cariMenu(Request $request, $category) {
+        $param = $request->input('cari_menu');
+
+        $menus = MenuModel::searchMenu($category, $param);
+        $rating = [];
+
+        if (!$menus) {
+            exit();
+        }
+
+        foreach($menus as $menu) {
+            $rating[$menu->id] = MenuReviewModel::getAverageRating($menu->id);
+        }
+
         $data = [
-            'page_title'    => 'A',
-            'cari'  => MenuModel::cariMenu($param)
+            'page_title'    => 'Search result of ' .$param,
+            'category'      => $category,
+            'menu'          => $menus,
+            'rating'        => $rating
         ];
 
         return view('show_all_menu_in_category')->with('data', $data);

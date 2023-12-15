@@ -46,7 +46,7 @@
                     </a>
                 </div>
             @endforeach
-            <a href="{{ url('/home/menu/appetizer') }}" class="btn btn-primary">See All Dishes</a>
+            <a href="{{ route('category_each', ['category' => 'appetizer']) }}" class="btn btn-primary">See All Dishes</a>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
                     </a>
                 </div>
             @endforeach
-            <a href="" class="btn btn-primary">See All Dishes</a>
+            <a href="{{ route('category_each', ['category' => 'main_course']) }}" class="btn btn-primary">See All Dishes</a>
         </div>
 
         {{-- GAMBAR MENU - CAROUSEL AUTOPLAY --}}
@@ -144,7 +144,7 @@
                     </a>
                 </div>
             @endforeach
-            <a href="" class="btn btn-primary">See All Dishes</a>
+            <a href="{{ route('category_each', ['category' => 'dessert']) }}" class="btn btn-primary">See All Dishes</a>
         </div>
     </div>
 

@@ -44,16 +44,20 @@ Route::post('/new-feedback', [
 
 Route::get('/home/menu/{category}', [
     MenuController::class, 'categoryDetails'
-]);
+])->name('category_each');
 
 Route::get('/home/cart', [
     CartController::class, 'viewCart'
 ]);
 
-Route::get('/home/menu/search/{param}', [
+Route::get('/home/menu/{category}/search', [
     MenuController::class, 'cariMenu'
-]);
+])->name('cari_menu');
 
 Route::post('/add-to-cart', [
     CartController::class, 'addItem'
+]);
+
+Route::get('/home/menu/{category}/sort/desc', [
+    
 ]);
