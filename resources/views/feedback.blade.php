@@ -39,7 +39,7 @@
     </div>
 
     <div class="container konten text-center" style="font-family: 'Cormorant Infant', serif; margin-top: 2rem; margin-bottom: 2rem">
-        <h4 class="text-center" style="padding: 4rem 0 1px 0 ; color: black;"><span class="text-black" style="border: 1px solid #E1B168; border-left: none; border-right: none; text-align: center;">Question</span></h4>
+        <h4 class="text-center" style="padding: 4rem 0 1px 0 ; color: black;"><span class="text-black" style="border: 1px solid #E1B168; border-left: none; border-right: none; text-align: center;">QUESTION</span></h4>
         <strong style="font-size: 50px;">Frequently Asked Question</strong>
     </div>
 
@@ -59,7 +59,7 @@
     </div>
 
     <div class="container text-center" style="margin-top: 2rem; margin-bottom: 2rem; font-family: 'Cormorant Infant', serif">
-        <h4 class="text-center" style="padding: 4rem 0 1px 0 ; color: black;"><span class="text-black" style="border: 1px solid #E1B168; border-left: none; border-right: none; text-align: center;">Mail Us</span></h4>
+        <h4 class="text-center" style="padding: 4rem 0 1px 0 ; color: black;"><span class="text-black" style="border: 1px solid #E1B168; border-left: none; border-right: none; text-align: center;">MAIL US</span></h4>
         <strong style="font-size: 50px;">Have a Question?</strong>
     </div>
 
