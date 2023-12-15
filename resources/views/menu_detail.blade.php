@@ -56,7 +56,7 @@
     @yield('navbar')
 
     <div class="menu-header" style="background-color: #292E36; font-family: 'Cormorant Infant', serif;">
-        <h1 class="text-center" style="padding: 4rem 0"><span class="text-light" style="border: 1px solid #E1B168; border-left: none; border-right: none">Our Menu</span></h1>
+        <h1 class="text-center" style="padding: 4rem 0"><span class="text-light" style="border: 1px solid #E1B168; border-left: none; border-right: none">Shop Single</span></h1>
     </div>
 
     <div class="container d-flex konten" style="margin-top: 8rem">

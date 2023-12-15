@@ -35,9 +35,9 @@
                 </div>
 
                 <div class="w-25 text-light text-end me-3">
-                    <p class="mb-1"><span style="color: #E1B168">Mon - Fri:</span> 7.00am - 6.00am</p>
-                    <p class="mb-1"><span style="color: #E1B168">Sat:</span> 7.00am - 6.00am</p>
-                    <p class="mb-1"><span style="color: #E1B168">Sun:</span> 8.00am - 6.00am</p>
+                    <p class="mb-1"><span style="color: #E1B168">Mon - Fri:</span> 7.00am - 6.00pm</p>
+                    <p class="mb-1"><span style="color: #E1B168">Sat:</span> 7.00am - 6.00pm</p>
+                    <p class="mb-1"><span style="color: #E1B168">Sun:</span> 8.00am - 6.00pm</p>
                 </div>                
             </div>
 
