@@ -32,4 +32,21 @@ class MenuModel extends Model
     static function getSpecificMenuDetail($id) {
         return self::with('category')->where('id', $id)->first();
     }
+
+    static function getAllMenuInCategory($category) {
+        $id_category = -1;
+        if ($category == 'appetizer') {
+            $id_category = 1;
+        } else if ($category == 'main_course') {
+            $id_category = 2;
+        } else if ($category == 'dessert') {
+            $id_category = 3;
+        }
+
+        return self::where('id_kategori', $id_category)->get();
+    }
+
+    static function cariMenu($param) {
+        return self::where('nama', 'like', '%' . $param . '%')->get();
+    }
 }

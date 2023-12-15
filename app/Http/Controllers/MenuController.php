@@ -35,4 +35,22 @@ class MenuController extends Controller
 
         return view('menu_detail')->with('data', $data);
     }
+
+    function categoryDetails($category) {
+        $data = [
+            'page_title' => ucwords($category),
+            'menu'       => MenuModel::getAllMenuInCategory($category)
+        ];
+
+        return view('show_all_menu_in_category')->with('data', $data);
+    }
+
+    function cariMenu($param) {
+        $data = [
+            'page_title'    => 'A',
+            'cari'  => MenuModel::cariMenu($param)
+        ];
+
+        return view('show_all_menu_in_category')->with('data', $data);
+    }    
 }

@@ -75,14 +75,17 @@
                 <p class="fs-5">{{ $data['detail_menu']->short_desc }}</p>
             </div>
 
-            <div class="d-flex pt-3">
-                <div class="input-group" style="width: auto; height: 50px;">
-                    <button class="btn btn-danger fw-bold" onclick="decrease()">-</button>
-                    <input type="number" name="" id="number-order" class="form-control text-center fw-bold" value="1" style="max-width: 4rem;">
-                    <button class="btn btn-success fw-bold" onclick="increase()">+</button>
-                </div>
-
-                <button class="btn px-4 fw-bold ms-3" style="border: 2px solid #E1B168; border-radius: 0%;">Add to Cart</button>
+            <div class="pt-3">
+                <form action="{{ url('/add-to-cart')}}" class="d-flex" method="POST">
+                    @csrf
+                    <input type="hidden" name="menu_id" value="{{ $data['detail_menu']->id }}">
+                    <div class="input-group" style="width: auto; height: 50px;">
+                        <button class="btn btn-danger fw-bold" onclick="decrease()" type="button">-</button>
+                        <input type="number" name="number_order" id="number-order" class="form-control text-center fw-bold" value="1" style="max-width: 4rem;">
+                        <button class="btn btn-success fw-bold" onclick="increase()" type="button">+</button>
+                    </div>
+                    <button class="btn px-4 fw-bold ms-3" style="border: 2px solid #E1B168; border-radius: 0%;" type="submit">Add to Cart</button>
+                </form>
             </div>
 
             <div class="container fs-5 ps-0 pt-5">

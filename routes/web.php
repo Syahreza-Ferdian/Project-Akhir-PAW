@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuReviewController;
@@ -27,7 +28,7 @@ Route::get('/home', [MenuController::class, 'index'])->name('home');
 
 Route::get('/home/menu/{id}', [
     MenuController::class, 'specificMenu'
-])->name('menu_each');
+])->where('id', '[0-9]+')->name('menu_each');
 
 Route::post('/add-review', [
     MenuReviewController::class, 'reviewBaru'
@@ -39,4 +40,20 @@ Route::get('/home/feedback', [
 
 Route::post('/new-feedback', [
     FeedbackController::class, 'newFeedback'
+]);
+
+Route::get('/home/menu/{category}', [
+    MenuController::class, 'categoryDetails'
+]);
+
+Route::get('/home/cart', [
+    CartController::class, 'viewCart'
+]);
+
+Route::get('/home/menu/search/{param}', [
+    MenuController::class, 'cariMenu'
+]);
+
+Route::post('/add-to-cart', [
+    CartController::class, 'addItem'
 ]);
