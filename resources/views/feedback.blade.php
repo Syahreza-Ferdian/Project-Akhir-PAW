@@ -21,13 +21,19 @@
         }
     </style>
 
+    {{-- STAR RATING --}}
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>
     @include('header')
 
     @yield('navbar')
-    
+
     <div class="menu-header konten" style="background-color: #292E36; font-family: 'Cormorant Infant', serif;">
         <h1 class="text-center" style="padding: 4rem 0"><span class="text-light" style="border: 1px solid #E1B168; border-left: none; border-right: none">FAQ</span></h1>
     </div>
@@ -37,18 +43,18 @@
         <strong style="font-size: 50px;">Frequently Asked Question</strong>
     </div>
 
-    <div class="accordion accordion-flush konten" id="accordionFlushExample" style="font-family: 'Cormorant Infant', serif; margin: 0 20rem;">
+    <div class="accordion accordion-flush konten" id="accordionFlushExample" style="font-family: 'Cormorant Infant', serif; margin: 0 25rem;">
         @foreach($data['questions'] as $pertanyaan)
-            <div class="accordion-item border mb-3">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pert_{{ $pertanyaan->id }}" aria-expanded="false" aria-controls="flush-collapseOne">
-                        {{ $pertanyaan->question }}
-                    </button>
-                </h2>
-                <div id="pert_{{ $pertanyaan->id }}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">{{ $pertanyaan->answer }}</div>
-                </div>
+        <div class="accordion-item border mb-3">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pert_{{ $pertanyaan->id }}" aria-expanded="false" aria-controls="flush-collapseOne">
+                    {{ $pertanyaan->question }}
+                </button>
+            </h2>
+            <div id="pert_{{ $pertanyaan->id }}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">{{ $pertanyaan->answer }}</div>
             </div>
+        </div>
         @endforeach
     </div>
 
@@ -57,7 +63,7 @@
         <strong style="font-size: 50px;">Have a Question?</strong>
     </div>
 
-    <form style="font-family: 'Cormorant Infant', serif;margin: 0 20rem 5rem 20rem;" id="form_feedback">
+    <form style="font-family: 'Cormorant Infant', serif;margin: 0 25rem 8rem 25rem;" id="form_feedback">
         @csrf
         <div class="row">
             <div class="col">
@@ -91,9 +97,42 @@
             <label for="exampleInputMessage" class="form-label">Message</label>
             <textarea type="text" class="form-control" id="exampleInputMessage" rows="7" name="message"></textarea>
         </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <label for="rating_input" class="control-label">Berikan Rating Pelayanan dan Kinerja Restoran Kami</label>
+        <input id="rating_input" name="rating_input" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-show-clear="false" required>
+        <button type="submit" class="btn border" style="background-color: #292E36; color: white">Submit</button>
     </form>
+
+    <div class="card" style="font-family: 'Cormorant Infant', serif;margin: 0 25rem 3rem 25rem; text-align: right; padding: 1rem 2rem 1rem 0;">
+        <div class="row">
+            <div class="col ms-2">
+                <h5 class="mt-1">Rating Restoran</h5>
+            </div>
+        </div>
+        <div class="row" style="margin-left: 40rem;">
+            <div class="col ms-5 mt-2">
+                <h5>({{ $data['jml_feedback'] }} Ulasan)</h5>
+            </div>
+            <div class="col">
+                <input id="rating" name="input" class="rating rating-loading" data-size='sm' data-show-clear='false' data-show-caption='false' data-readonly="true" value="{{ $data['average'] }}">
+            </div>
+        </div>
+    </div>
+    <div class="card-body border" style="font-family: 'Cormorant Infant', serif;margin: 0 25rem 0 25rem; padding-top: 14px; padding-left: 2rem;">
+        <h3>Ulasan :</h3>
+    </div>
+    @foreach ($data['feedback'] as $review)
+    <div class="card-body border" style="font-family: 'Cormorant Infant', serif;margin: 0 25rem 0 25rem; padding-top: 14px; padding-left: 2rem;">
+        <div class="row">
+            <div class="col ms-2">
+                <h5 class="mt-1">{{$review->nama}}</h5>
+                <p class="mt-0" style="color: #555555">{{ date('d-m-Y h:i:s', strtotime($review->posted_at)) }}</p>
+            </div>
+        </div>
+        <input id="rating" name="input" class="rating rating-loading" data-size='sm' data-show-clear='false' data-show-caption='false' data-readonly="true" value="{{ $review->rating }}">
+        <p>{{$review->message}}</p>
+    </div>
+    @endforeach
+    <div style="margin-bottom: 4rem;"></div>
 
     @include('footer')
 
@@ -101,8 +140,8 @@
 
 
     <script>
-        $(document).ready(function (){
-            $('#form_feedback').submit(function (e) {
+        $(document).ready(function() {
+            $('#form_feedback').submit(function(e) {
                 e.preventDefault();
 
                 $.ajaxSetup({
@@ -113,12 +152,12 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '/new-feedback', 
+                    url: '/new-feedback',
                     data: $('#form_feedback').serialize(),
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status == 'success') {
                             $('#form_feedback').trigger("reset");
-                            
+
                             Swal.fire({
                                 title: "Berhasil",
                                 text: "Feedback berhasil disimpan! Terima kasih atas masukan Anda",
@@ -127,7 +166,7 @@
 
                         }
                     },
-                    error: function (error) {
+                    error: function(error) {
                         Swal.fire({
                             title: "Gagal",
                             text: "Gagal Menambahkan Feedback",

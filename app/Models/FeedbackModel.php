@@ -17,6 +17,13 @@ class FeedbackModel extends Model
         'email',
         'subject',
         'phone',
-        'message'
+        'message',
+        'rating'
     ];
+
+    // Menghitung rata-rata dari rating
+    public static function averageRating()
+    {
+        return self::avg('rating');
+    }
 }

@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->timestamp('posted_at');
             $table->string('nama');
             $table->string('email');
             $table->string('subject');
             $table->bigInteger('phone');
             $table->text('message');
+            $table->enum('rating', [1, 2, 3, 4, 5]);
         });
     }
 
