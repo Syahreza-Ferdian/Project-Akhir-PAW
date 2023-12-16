@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+body{
+    font-family: 'Cormorant Infant', serif;
+	scroll-behavior: smooth;
+}
+
+.juduls h2{
+    font-family: 'Cormorant Infant';
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 60px;
+}
+
+.isi{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    font-family: 'Josefin Sans';
+}
+
+.isi .inputs1{
+    margin-bottom: 100px;
+}
+
+.isi .inputs1 .form-group{
+    margin-bottom: 50px;
+    border-radius: 0px;
+    border: 2px solid #292E36;
+}
+
+.isi .inputs1 .form-group .form-control{
+    height: 80px;
+    border: none;
+    font-size: 25px;
+}
+
+
+.isi .inputs1 .form-group .form-control::placeholder{
+    color: #343942;
+    border: none;
+    font-size: 25px;
+}
+
+.isi .btn{
+    background-color: #FFFFFF;
+    border: 2px solid #E1B168;
+    color: #E1B168;
+    border-radius: 0px;
+    width: 300px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.isi .btn:hover{
+    background-color: #E1B168;
+    color: #FFFFFF;
+}
+
+.isi2 .kotak{
+    border: 2px solid #E1B168; 
+    margin-bottom: 50px;
+}
+
+.isi2{
+    margin-bottom: 100px;
+}
+
