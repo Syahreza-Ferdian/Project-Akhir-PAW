@@ -6,6 +6,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuReviewController;
 use App\Http\Controllers\ChefController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -70,3 +71,9 @@ Route::post('/add-to-cart', [
 Route::get('/home/menu/{category}/sort/desc', [
     
 ]);
+
+Route::get('/reservasi', [ReservationController::class, 'displayFormReservasi']);
+
+Route::get('/check-meja-tersedia', [ReservationController::class, 'cariMejaTersedia']);
+
+Route::post('/submit-form', [ReservationController::class, 'submitForm'])->name('submit-form');
