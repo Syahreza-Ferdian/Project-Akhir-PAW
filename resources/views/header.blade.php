@@ -13,7 +13,7 @@
         
         <img src="{{ asset('images/Logo Makan Mania.png') }}" alt="logo" style="width:17rem;" class="me-5">
 
-        <button class="btn mt-4 px-4" style="background-color: #E1B168; border-radius: 0%; height: 60px"><span class="fs-3">Reservation</span></button>
+        <button class="btn mt-4 px-4" style="background-color: #E1B168; border-radius: 0%; height: 60px" onclick="window.location.href='/reservasi'"><span class="fs-3">Reservation</span></button>
     </div>
 </div>
 
