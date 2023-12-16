@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             MenuSeeder::class,
             MenuReviewSeeder::class,
-            QuestionSeeder::class
+            QuestionSeeder::class,
+            ChefSeeder::class
         ]);
     }
 }

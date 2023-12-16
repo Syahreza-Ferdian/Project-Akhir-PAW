@@ -37,6 +37,9 @@
                     <li class="nav-item me-5">
                         <a class="nav-link" href="{{ route('feedback') }}"><span class="text-light fs-5">Feedback</span></a>
                     </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" href="{{ route('chef') }}"><span class="text-light fs-5">About Us</span></a>
+                    </li>
                 </ul>
             </div>
 
