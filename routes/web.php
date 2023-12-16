@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuReviewController;
+use App\Http\Controllers\ChefController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,11 @@ Route::get('/home/menu/{id}', [
 Route::post('/add-review', [
     MenuReviewController::class, 'reviewBaru'
 ]);
+
+Route::get('/home/chef', [
+    ChefController::class, 'index'
+])->name('chef');
+
+Route::get('/home/chef/search/', [
+    ChefController::class, 'cariChef'
+])->name('cari_chef');
