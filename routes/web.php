@@ -72,7 +72,7 @@ Route::get('/home/menu/{category}/sort/desc', [
     
 ]);
 
-Route::get('/reservasi', [ReservationController::class, 'displayFormReservasi']);
+Route::get('/reservasi', [ReservationController::class, 'displayFormReservasi'])->name('reservasi');
 
 Route::get('/check-meja-tersedia', [ReservationController::class, 'cariMejaTersedia']);
 
