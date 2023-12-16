@@ -77,3 +77,14 @@ Route::get('/reservasi', [ReservationController::class, 'displayFormReservasi'])
 Route::get('/check-meja-tersedia', [ReservationController::class, 'cariMejaTersedia']);
 
 Route::post('/submit-form', [ReservationController::class, 'submitForm'])->name('submit-form');
+
+Route::get('/home/cart', [
+    CartController::class, 'viewCart'
+])->name('view_cart');
+
+Route::post('/add-to-cart', [
+    CartController::class, 'addItem'
+]);
+
+Route::post('/place-order', [
+    CartController::class, 'placeOrder']);

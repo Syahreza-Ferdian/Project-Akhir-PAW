@@ -29,7 +29,7 @@
                         <a class="nav-link" href="{{ route('home', ['#menu']) }}"><span class="text-light fs-5">Menu</span></a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#"><span class="text-light fs-5">Order</span></a>
+                        <a class="nav-link" href="{{ route('view_cart') }}"><span class="text-light fs-5">Order</span></a>
                     </li>
                     <li class="nav-item me-5">
                         <a class="nav-link" href="#"><span class="text-light fs-5">Reservation</span></a>
