@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>{{ $data['detail_menu']->nama }} | Makan Mania</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -36,6 +38,16 @@
         #my_tab .active {
             color: black;
         }
+
+        #add_review_btn {
+            transition: 0.3s;
+        }
+
+        #add_review_btn:hover {
+            color: white;
+            box-shadow: inset 12.25rem 0 0 0 #292E36;
+            transition: 0.3s ease-in;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +56,7 @@
     @yield('navbar')
 
     <div class="menu-header" style="background-color: #292E36; font-family: 'Cormorant Infant', serif;">
-        <h1 class="text-center" style="padding: 4rem 0"><span class="text-light" style="border: 1px solid #E1B168; border-left: none; border-right: none">Our Menu</span></h1>
+        <h1 class="text-center" style="padding: 4rem 0"><span class="text-light" style="border: 1px solid #E1B168; border-left: none; border-right: none">Shop Single</span></h1>
     </div>
 
     <div class="container d-flex konten" style="margin-top: 8rem">
@@ -63,14 +75,17 @@
                 <p class="fs-5">{{ $data['detail_menu']->short_desc }}</p>
             </div>
 
-            <div class="d-flex pt-3">
-                <div class="input-group" style="width: auto; height: 50px;">
-                    <button class="btn btn-danger fw-bold" onclick="decrease()">-</button>
-                    <input type="number" name="" id="number-order" class="form-control text-center fw-bold" value="1" style="max-width: 4rem;">
-                    <button class="btn btn-success fw-bold" onclick="increase()">+</button>
-                </div>
-
-                <button class="btn px-4 fw-bold ms-3" style="border: 2px solid #E1B168; border-radius: 0%;">Add to Cart</button>
+            <div class="pt-3">
+                <form action="{{ url('/add-to-cart')}}" class="d-flex" method="POST">
+                    @csrf
+                    <input type="hidden" name="menu_id" value="{{ $data['detail_menu']->id }}">
+                    <div class="input-group" style="width: auto; height: 50px;">
+                        <button class="btn btn-danger fw-bold" onclick="decrease()" type="button">-</button>
+                        <input type="number" name="number_order" id="number-order" class="form-control text-center fw-bold" value="1" style="max-width: 4rem;">
+                        <button class="btn btn-success fw-bold" onclick="increase()" type="button">+</button>
+                    </div>
+                    <button class="btn px-4 fw-bold ms-3" style="border: 2px solid #E1B168; border-radius: 0%;" type="submit">Add to Cart</button>
+                </form>
             </div>
 
             <div class="container fs-5 ps-0 pt-5">
@@ -84,16 +99,16 @@
     <div class="container konten" style="margin-top: 6rem; margin-bottom: 15rem">
         <ul class="nav nav-tabs fw-bold fs-6" role="tablist" id="my_tab">
             <li class="nav-item active" role="presentation">
-                <button class="nav-link px-0" data-bs-toggle="tab" data-bs-target="#desc_pane" role="tab">DESCRIPTION</button>
+                <button class="nav-link px-0 active" data-bs-toggle="tab" data-bs-target="#desc_pane" role="tab">DESCRIPTION</button>
             </li>
             <li class="nav-item ps-5" role="presentation">
-                <button class="nav-link px-0 active" data-bs-toggle="tab" data-bs-target="#review_pane" role="tab">REVIEWS (<span id="review_count">{{ $data['total_review'] }}</span>)</button>
+                <button class="nav-link px-0" data-bs-toggle="tab" data-bs-target="#review_pane" role="tab">REVIEWS (<span id="review_count">{{ $data['total_review'] }}</span>)</button>
             </li>
         </ul>
 
         <div class="tab-content">
             {{-- DESC TAB --}}
-            <div class="tab-pane fade" id="desc_pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0" style="font-weight: 400">
+            <div class="tab-pane fade show active" id="desc_pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0" style="font-weight: 400">
                 <hr>
                 <h2 class="mt-4">Description</h2>
                 <p style="width: 90%; color: #555555">{{ $data['detail_menu']->long_desc }}</p>
@@ -101,15 +116,15 @@
             </div>
 
             {{-- REVIEW TAB --}}
-            <div class="tab-pane fade show active" id="review_pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                <div class="container" style="margin-left: -0.7rem">
+            <div class="tab-pane fade" id="review_pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="container mt-4" style="margin-left: -0.7rem">
                     <div class="container ps-0 mb-3 d-flex justify-content-between">
                         <div class="prev_next_btn">
-                            <button class="btn btn-primary @if($data['review']->isEmpty()) d-none @endif" type="button" data-bs-target="#review_cards" data-bs-slide="prev"><i class="fa fa-arrow-left"></i></button>
-                            <button class="btn btn-primary @if($data['review']->isEmpty()) d-none @endif" type="button" data-bs-target="#review_cards" data-bs-slide="next"><i class="fa fa-arrow-right"></i></button>
+                            <button class="btn @if($data['review']->isEmpty()) d-none @endif" type="button" data-bs-target="#review_cards" data-bs-slide="prev" style="border: 2px solid #E1B168"><i class="fa fa-arrow-left"></i></button>
+                            <button class="btn @if($data['review']->isEmpty()) d-none @endif" type="button" data-bs-target="#review_cards" data-bs-slide="next" style="border: 2px solid #E1B168"><i class="fa fa-arrow-right"></i></button>
                         </div>
 
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_review">Tambah Ulasan Baru</button>
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#new_review" id="add_review_btn" style="border: 2px solid #E1B168; border-radius: 0%">Tambah Ulasan Baru</button>
                     </div>
                         <div id="review_cards" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -127,7 +142,7 @@
 
                                                                 <div class="col ms-2">
                                                                     <h5 class="mt-1">{{$review->poster_name}}</h5>
-                                                                    <p class="mt-0" style="color: #555555">{{ $review->posted_at }}</p>
+                                                                    <p class="mt-0" style="color: #555555">{{ date('d-m-Y h:i:s', strtotime($review->posted_at)) }}</p>
                                                                 </div>
                                                             </div>
 
@@ -213,12 +228,17 @@
             $('#form_review').submit(function (e) {
                 e.preventDefault();
 
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
                 $.ajax({
                     type: 'POST',
                     url: '/add-review', 
-                    data: $(this).serialize(),
+                    data: $('#form_review').serialize(),
                     success: function (response) {
-                        // Handle response
                         if (response.review) {
                             $('#form_review').trigger("reset");
                             

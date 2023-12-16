@@ -22,7 +22,7 @@
         <div class="container d-flex" style="margin-bottom: 10rem">
             <div class="rest-desc w-50" style="margin-top: 10rem;">
                 <h1 style="font-weight: 700; color: white; font-size: 58px">Welcome to<br>Makan Mania Restaurant</h1>
-                <p class="text-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus nam repudiandae animi laborum corrupti quos eaque aspernatur officia quisquam modi.</p>
+                <p class="text-light">Tempat di mana kelezatan dan kenyamanan bertemu dalam sebuah pengalaman kuliner yang tak terlupakan. Jelajahi dunia rasa melalui sentuhan kreativitas para chef handal kami dan nikmati hidangan lezat yang disajikan dengan penuh cinta.</p>
 
                 <a href="#menu"><button class="btn px-4 mt-2" style="border: 2px solid; border-color: #E1B168; border-radius: 0%; height: 45px; color:white"><strong>Lihat Menu</strong></button></a>
             </div>
